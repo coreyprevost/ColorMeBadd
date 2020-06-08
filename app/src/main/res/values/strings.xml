@@ -10,4 +10,7 @@
     <string name="button_green">GREEN</string>
     <string name="txt_howtoplay">How To Play:</string>
     <string name="txt_taptheboxesandbuttons">Tap the boxes and buttons</string>
+    <string name="txt_btn_Random">Random</string>
+    <string name="txt_btn_Restart">Ok I\'m bored now </string>
+    <string name="txt_btn_GoCrazy">Go Crazy</string>
 </resources>

@@ -78,7 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/txt_howtoplay"
-        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -88,12 +89,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/txt_taptheboxesandbuttons"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/tv_box_two"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.31" />
 
     <Button
         android:id="@+id/btn_Red"
@@ -134,5 +137,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_Yellow" />
+
+    <Button
+        android:id="@+id/btn_Random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_Random"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_Reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_Restart"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toEndOf="@+id/btn_Random"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <Button
+        android:id="@+id/btn_GoCrazy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_GoCrazy"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_Random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

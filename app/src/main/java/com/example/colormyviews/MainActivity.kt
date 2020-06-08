@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         val redButton = findViewById<Button>(R.id.btn_Red)
         val greenButton = findViewById<Button>(R.id.btn_Green)
         val yellowButton = findViewById<Button>(R.id.btn_Yellow)
+        val randomButton = findViewById<Button>(R.id.btn_Random)
+        val resetButton = findViewById<Button>(R.id.btn_Reset)
+        val goCrazy = findViewById<Button>(R.id.btn_GoCrazy)
         val clickableViews: List<View> =
             listOf(
                 box_one_text,
@@ -26,26 +30,40 @@ class MainActivity : AppCompatActivity() {
                 tv_boxthree,
                 tv_boxfour,
                 tvboxfive,
+                btn_GoCrazy,
                 btn_Red,
                 btn_Green,
                 btn_Yellow,
+                btn_Random,
+                btn_Reset,
                 constraint_layout
             )
         val buttonArray = arrayOf(btn_Green, btn_Yellow, btn_Red)
-        redButton.setOnClickListener {
-            for (items in clickableViews.minus(buttonArray)) {
-                items.setBackgroundColor(Color.RED)
+        fun changeColors (colorz:Int){
+            for (items in clickableViews.minus(buttonArray)){
+                items.setBackgroundColor(colorz)
             }
+        }
+        goCrazy.setOnClickListener { for (items in clickableViews.minus(buttonArray)) {
+            items.setBackgroundColor(Random.nextInt())
+        } }
+
+        resetButton.setOnClickListener {
+            finish()
+            startActivity(intent)
+        }
+
+        randomButton.setOnClickListener {
+            changeColors(Random.nextInt())
+        }
+        redButton.setOnClickListener {
+            changeColors(Color.RED)
         }
         greenButton.setOnClickListener {
-            for (items in clickableViews.minus(buttonArray)) {
-                items.setBackgroundColor(Color.GREEN)
-            }
+            changeColors(Color.GREEN)
         }
         yellowButton.setOnClickListener {
-            for (items in clickableViews.minus(buttonArray)) {
-                items.setBackgroundColor(Color.YELLOW)
-            }
+            changeColors(Color.YELLOW)
         }
     }
 
